@@ -283,7 +283,7 @@
                                         <option value="title" <c:if test="${ searchCondition eq 'title' }">selected</c:if>>제목</option>
                                         <option value="content" <c:if test="${ searchCondition eq 'content' }">selected</c:if>>내용</option>
                                     </select>
-                                    <input type="search" id="searchValue" style="height: 30px; width: 200px; border: 1px solid #e3e3e3;"
+                                    <input type="text" id="inputValue" style="height: 30px; width: 200px; border: 1px solid #e3e3e3;"
                                     	<c:if test="${ !empty searchValue }">value="${ searchValue }"</c:if>>
                                     <button class="Searchbtn" onclick="searchBoard();">검색</button>
 
@@ -322,7 +322,7 @@
     	// 게시글 검색
     	function searchBoard(){
 			var searchCondition = $("#searchCondition").val();
-			var searchValue = $("#searchValue").val();
+			var searchValue = $("#inputValue").val();
 			
 			if(searchCondition ==  "-------"){
 				alert("검색 카테고리를 선택하세요.");

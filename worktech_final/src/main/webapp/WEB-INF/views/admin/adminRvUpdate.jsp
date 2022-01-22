@@ -60,10 +60,10 @@
 									<div class="card-body">
 										<input type="hidden" name="pdNo" value="${ rp.pdNo }">
 										<div class="form-group">
-											<label>예약 자산 카테고리</label> <input type="text" name="pdCategory" class="form-control" value="${ rp.pdCategory }">
+											<label>예약 자산 카테고리</label> <input type="text" name="pdCategory" class="form-control" required value="${ rp.pdCategory }">
 										</div>
 										<div class="form-group">
-											<label>예약 자산명</label> <input type="text" name="pdName" class="form-control" value="${ rp.pdName }">
+											<label>예약 자산명</label> <input type="text" name="pdName" class="form-control" required value="${ rp.pdName }">
 										</div>
 										<div class="form-group">
 											<label>추가 일자</label> <input type="date" name="pdDate" class="form-control" id="addDate" value="${ rp.pdDate }">
@@ -94,7 +94,7 @@
 										</div>
 									</div>
 								<div class="card-footer text-right">
-	                                <button class="btn btn-primary mr-1" type="submit">수정</button>
+	                                <button class="btn btn-primary mr-1" type="submit" onclick="return updateRv()">수정</button>
 	                                <c:url var="rvdetail" value="rvpdetail.ad">
 										<c:param name="pdNo" value="${ rp.pdNo }"/>
 										<c:param name="page" value="${ page }"/>
@@ -126,6 +126,13 @@
 				else $("#all").prop("checked", true); 
 			});
 		});
+		
+		function updateRv(){
+			if($("input[name=department]:checked").length == 0){
+				alert('사용 범위를 선택하세요');
+				return false;
+			}
+		}
 	</script>
 </body>
 

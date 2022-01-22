@@ -13,11 +13,6 @@
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-<!-- Theme style -->
-<link rel="stylesheet" href="${contextPath}/resources/dist/css/adminlte.min.css">
-<link rel="stylesheet" href="${contextPath}/resources/dist/assets/modules/summernote/summernote-bs4.css">
-<link rel="stylesheet" href="${contextPath}/resources/dist/assets/modules/jquery-selectric/selectric.css">
-<link rel="stylesheet" href="${contextPath}/resources/dist/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 <style>
 .mailsubtitle-flex-container {
 	display: flex;
@@ -199,7 +194,7 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<textarea id="compose-textarea" class="form-control mail-subtitle summernote" name="econtent" placeholder="메일 내용을 입력해주세요"></textarea>
+								<textarea id="compose-textarea" class="form-control mail-subtitle" name="econtent" placeholder="메일 내용을 입력해주세요"></textarea>
 							</div>
 							<div class="form-group">
 								<div class="btn btn-default btn-file">
@@ -208,7 +203,6 @@
 										name="uploadFile"></i>
 								</div>
 							</div>
-							<!-- 										<p class="help-block">Max. 32MB</p> -->
 						</div>
 					</form>
 					<!-- /.card-body -->
@@ -243,14 +237,6 @@
 
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-	<!-- AdminLTE App -->
-	<script src="${contextPath}/resources/dist/js/adminlte.min.js"></script>
-
-	<script src="${contextPath}/resources/dist/assets/modules/summernote/summernote-bs4.js"></script>
-	<script src="${contextPath}/resources/dist/assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-	<script src="${contextPath}/resources/dist/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-	<script src="${contextPath}/resources/dist/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
 
 	<!-- Page Specific JS File -->
 	<script

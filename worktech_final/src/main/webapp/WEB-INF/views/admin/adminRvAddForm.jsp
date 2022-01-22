@@ -64,7 +64,7 @@
 									</div>
 								</div>
 								<div class="card-footer text-right">
-									<button class="btn btn-primary mr-1" type="submit">등록</button>
+									<button class="btn btn-primary mr-1" type="submit" onclick="return addRv()">등록</button>
 									<button class="btn btn-secondary" type="reset"  onclick="location.href='rvProductList.ad'">취소</button>
 								</div>
 							</div>
@@ -94,6 +94,13 @@
 				else $("#all").prop("checked", true); 
 			});
 		});
+		
+		function addRv(){
+			if($("input[name=department]:checked").length == 0){
+				alert('사용 범위를 선택하세요');
+				return false;
+			}
+		}
 	</script>
 </body>
 

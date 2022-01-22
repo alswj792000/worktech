@@ -17,12 +17,6 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
 
-<link rel="stylesheet"
-	href="resources/dist/assets/modules/summernote/summernote-bs4.css">
-<link rel="stylesheet"
-	href="resources/dist/assets/modules/jquery-selectric/selectric.css">
-<link rel="stylesheet"
-	href="resources/dist/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
 
 <script async="async"
 	src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -233,58 +227,62 @@ td {
 								<div class="table-responsive mailbox-messages">
 									<table class="table table-hover table-striped">
 										<form id="allManage" method="post">
-											<!-- value에 반환할 페이지 넣기 -->
+											
 											<input type="hidden" value="alllist" name="command">
-											<c:forEach var="mi" items="${list }" varStatus="idCount">
-												<c:forEach var="mF" items="${mi.mailFileList}">
-													<c:if test="${mF.mlStatus == 'Y'}">
-														<c:set var="attachment" value="on" />
-													</c:if>
-													<c:if test="${mF.mlStatus != 'Y'}">
-														<c:set var="attachment" value="off" />
-													</c:if>
-												</c:forEach>
-												<c:forEach var="mSR" items="${mi.mailSRList }">
-													<c:if test="${empty mSR.RDate }">
-														<c:set var="read" value="n" />
-													</c:if>
-													<c:if test="${not empty mSR.RDate }">
-														<c:set var="read" value="y" />
-													</c:if>
-													<c:if
-														test="${mSR.favorites eq null || mSR.favorites eq 'N' }">
-														<c:set var="star" value="n" />
-													</c:if>
-													<c:if test="${mSR.favorites eq 'Y' }">
-														<c:set var="star" value="y" />
-													</c:if>
-												</c:forEach>
-												<c:url var="mdetail" value="readmail.mail">
-													<c:param name="mId" value="${ mi.mailNo }" />
-													<c:param name="page" value="${ pi.currentPage }" />
-												</c:url>
-												<tr>
-													<td>
-														<div class="icheck-primary">
-															<input type="checkbox" value="${mi.mailNo }" name="check"
-																id="check${idCount.count }"> <label
-																for="check${idCount.count }"></label>
-														</div>
-													</td>
-													<td class="mailbox-star"><c:if test="${star == 'n'}">
-															<a href="#"> <i class="far fa-star text-warning"></i>
+												<c:forEach var="mi" items="${list }" varStatus="idCount">
+													<c:forEach var="mF" items="${m.mailFileList}">
+														<c:if test="${mF.mStatus == 'Y'}">
+															<c:set var="attachment" value="on" />
+														</c:if>
+														<c:if test="${mF.mStatus != 'Y'}">
+															<c:set var="attachment" value="off" />
+														</c:if>
+													</c:forEach>
+													<c:forEach var="mSR" items="${mi.mailSRList }">
+														<c:if test="${empty mSR.RDate }">
+															<c:set var="read" value="n" />
+														</c:if>
+														<c:if test="${not empty mSR.RDate }">
+															<c:set var="read" value="y" />
+														</c:if>
+														<c:if test="${mSR.favorites eq null || mSR.favorites eq 'N' }">
+															<c:set var="star" value="n"/>
+														</c:if>
+														<c:if test="${mSR.favorites eq 'Y' }">
+															<c:set var="star" value="y"/>
+														</c:if>
+													</c:forEach>
+													<c:url var="mdetail" value="readmail.mail">
+														<c:param name="mId" value="${ mi.mailNo }" />
+														<c:param name="page" value="${ pi.currentPage }" />
+													</c:url>
+													<tr>
+														<td>
+															<div class="icheck-primary">
+																<input type="checkbox" value="${mi.mailNo }" name="check" id="check${idCount.count }">
+																<label for="check${idCount.count }"></label>
+															</div>
+														</td>
+														<td class="mailbox-star">
+														<c:if test="${star == 'n'}">
+															<a href="#">
+																<i class="far fa-star text-warning"></i>
 															</a>
-														</c:if> <c:if test="${star  == 'y'}">
-															<a href="#"> <i class="fas fa-star text-warning"></i>
+														</c:if>
+														<c:if test="${star  == 'y'}">
+															<a href="#">
+																<i class="fas fa-star text-warning"></i>
 															</a>
-														</c:if> <c:if test="${read == 'y' }">
-															<i id="readmail"
-																class="far fa-envelope-open text-primary"></i>
-														</c:if> <c:if test="${read != 'y' }">
-															<i id="readmail" class="fas fa-envelope text-primary"></i>
-														</c:if> <c:if test="${attachment == 'on' }">
-															<i class="fas fa-paperclip"></i>
-														</c:if></td>
+														</c:if>
+														 <c:if test="${read == 'y' }">
+																<i id="readmail" class="far fa-envelope-open text-primary"></i>
+															</c:if> 
+														<c:if test="${read != 'y' }">
+																<i id="readmail" class="fas fa-envelope text-primary"></i>
+															</c:if> <c:if test="${attachment == 'on' }">
+																<i class="fas fa-paperclip"></i>
+															</c:if></td>
+														
 													<c:if test="${ mi.mailSRList.get(0).sRStatus == 'R'}">
 														<td class="mailbox-name"><a href=#>${mi.senderName }</a></td>
 														<td onclick="location.href='${mdetail}'"
@@ -469,18 +467,11 @@ td {
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 
-	<script
-		src="resources/dist/assets/modules/summernote/summernote-bs4.js"></script>
-	<script
-		src="resources/dist/assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-	<script
-		src="resources/dist/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-	<script
-		src="resources/dist/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+
 
 	<!-- Page Specific JS File -->
 	<script
-		src="${contextPath}/resources/dist/assets/js/page/features-post-create.js"></script>
+		src="resources/dist/assets/js/page/features-post-create.js"></script>
 
 
 

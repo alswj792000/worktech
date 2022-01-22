@@ -11,12 +11,7 @@
 
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="${contextPath}/resources/plugins/fontawesome-free/css/all.min.css">
-<!-- icheck bootstrap -->
-<link rel="stylesheet" href="${contextPath}/resources/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-<!-- Theme style -->
-<link rel="stylesheet" href="${contextPath}/resources/dist/css/adminlte.min.css">
+
 
 <style>
 .mailSR-info {
@@ -101,6 +96,10 @@ td {
 	display: none;
 	width: 0px;
 }
+.mailbox-controls{padding:5px}
+.mailbox-controls.with-border{border-bottom:1px solid rgba(0,0,0,.125)}
+.table-responsive{overflow:auto}.table-responsive>.table tr td,.table-responsive>
+.mailbox-messages>.table{margin:0}
 </style>
 </head>
 <body>
@@ -111,17 +110,19 @@ td {
 		
 			<section class="section">
 				<div class="section-header">
-					<div class="row mb-2">
-						<div class="col-sm-6">
-							<h1>휴지통</h1>
-							<div class="section-header-breadcrumb"></div>
-						</div>
-
-					</div>
+					<h1>휴지통</h1>
+				<div class="section-header-button">
+					<a href="send.mail" class="btn btn-primary">메일 보내기</a>
+				</div>
+				<div class="section-header-breadcrumb"></div>
+					
 				</div>
 				<!-- /.container-fluid -->
-			</section>
-
+		
+			<div class="section-body">
+				<h2 class="section-title">메일함</h2>
+				<p class="section-lead">메일 삭제, 중요메일 관리를 할 수 있습니다.</p>
+			</section>	
 			<!-- Main content -->
 			<section class="content">
 				<div class="container-fluid">
@@ -151,7 +152,7 @@ td {
 									<li class="nav-item"><a href="templist.mail" class="nav-link templist">
 									<i class="far fa-file-alt mail-icon"></i> 임시보관함 </a></li>
 									<li class="nav-item"><a href="favoriteslist.mail" class="nav-link favoriteslist"> 
-									<i class="far fa-star favorites" id="favorites-icon"></i> 즐겨찾기 </a></li>
+									<i class="far fa-star favorites" id="favorites-icon"></i>&nbsp;즐겨찾기 </a></li>
 									<li class="nav-item"><a href="deletelist.mail" class="deletelist nav-link"> 
 									<i class="far fa-trash-alt mail-icon"></i> 휴지통 </a></li>
 								</ul>
@@ -188,12 +189,6 @@ td {
 										<div class="btn-group">
 											<button type="button" class="btn btn-default btn-sm deleteMailBtn">
 												<i class="far fa-trash-alt"></i>
-											</button>
-											<button type="button" class="btn btn-default btn-sm">
-												<i class="fas fa-reply"></i>
-											</button>
-											<button type="button" class="btn btn-default btn-sm">
-												<i class="fas fa-share"></i>
 											</button>
 										</div>
 										<!-- /.btn-group -->
@@ -234,6 +229,8 @@ td {
 														<c:if test="${not empty mSR.RDate }">
 															<c:set var="read" value="y" />
 														</c:if>
+													</c:forEach>
+													<c:forEach var="mSR" items="${mi.mailSRList }">	
 														<c:if test="${mSR.favorites eq null || mSR.favorites eq 'N' }">
 															<c:set var="star" value="n"/>
 														</c:if>
@@ -264,16 +261,14 @@ td {
 															</a>
 														</c:if>
 														<c:if test="${read == 'y' }">
-																<i id="readmail" class="far fa-envelope-open text-primary"></i>
-															</c:if> 
-															<c:if test="${read != 'y' }">
-																<i id="readmail" class="fas fa-envelope text-primary"></i>
-															</c:if> 
-															
-															
-															<c:if test="${attachment == 'on' }">
-																<i class="fas fa-paperclip"></i>
-															</c:if></td>
+															<i id="readmail" class="far fa-envelope-open text-primary"></i>
+														</c:if> 
+														<c:if test="${read != 'y' }">
+															<i id="readmail" class="fas fa-envelope text-primary"></i>
+														</c:if> 
+														<c:if test="${attachment == 'on' }">
+															<i class="fas fa-paperclip"></i>
+														</c:if></td>
 														<%-- 														${mi.mailSRList.get(0).sRStatus } --%>
 														<c:if test="${ mi.mailSRList.get(0).MNo != loginUser.mNo}">
 															<td class="mailbox-name"><a href=#>${mi.senderName }</a></td>
@@ -437,14 +432,6 @@ td {
 	
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 
-	<!-- jQuery -->
-	<script src="${contextPath}/resources/plugins/jquery/jquery.min.js"></script>
-	<!-- Bootstrap 4 -->
-	<script src="${contextPath}/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="${contextPath}/resources/dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="${contextPath}/resources/dist/js/demo.js"></script>
 	<!-- Page specific script -->
 	<script>
 		$(function() {

@@ -95,7 +95,12 @@
 </head>
 
 <body>
-    <c:import url="../common/headerAdmin.jsp" />
+    <c:if test="${ loginUser.mGrade eq 'USER' }">
+		<c:import url="../common/headerUser.jsp" />
+	</c:if>
+    <c:if test="${ loginUser.mGrade eq 'ADMIN' }">
+    	<c:import url="../common/headerAdmin.jsp" />
+    </c:if>
     <!-- Main Content -->
     <div class="main-content">
         <section class="section">

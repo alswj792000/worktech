@@ -47,7 +47,6 @@
 				                     <!-- 프로필 이미지 영역 -->
 					                 <!-- Basic avatar examples : https://picturepan2.github.io/spectre/components/avatars.html-->
 						             <figure class="avatar avatar-xl" id="titleImgArea">
-										<!-- pUrl이 비어있을때는 기본이미지 출력 -->
 										<c:choose>									
 		   									<c:when test="${ loginUser.profile.pReName eq null }" >
 		   										<img id="titleImg" src="resources/dist/assets/img/avatar/avatar-3.png" >
@@ -58,6 +57,8 @@
 										</c:choose>
 									</figure>
 									<br><br><br>
+									
+									
      
 				                    <div class="form-group">
 				                    	<label>사번</label>
@@ -76,12 +77,12 @@
 				                    
 				                    <div class="form-group">
 				                      <label>부서</label>
-				                      <input type="text" id="dName" name="dName" class="form-control" value="영업부" readonly style="background : white;" value="${ loginUser.dName }">
+				                      <input type="text" id="dName" name="dName" class="form-control" readonly style="background : white;" value="${ loginUser.dName }">
 				                    </div>
 				                    
 				                    <div class="form-group">
 				                      <label>직급</label>
-				                      <input type="text" id="jobGrade" name="jobGrade" class="form-control" value="대리" readonly style="background : white;" value="${ loginUser.jobGrade }">
+				                      <input type="text" id="jobGrade" name="jobGrade" class="form-control"readonly style="background : white;" value="${ loginUser.jobGrade }">
 				                    </div>
 				                    
 				                    <div class="form-group">

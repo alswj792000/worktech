@@ -2,6 +2,7 @@ package com.groupware.worktech.calendar.controller;
 
 import java.sql.Timestamp;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.groupware.worktech.calendar.model.exception.CalendarException;
 import com.groupware.worktech.calendar.model.service.CalendarService;
-import com.groupware.worktech.calendar.vo.Calendar;
+import com.groupware.worktech.calendar.model.vo.Calendar;
 import com.groupware.worktech.member.model.vo.Member;
 
 @Controller

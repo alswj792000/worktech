@@ -101,7 +101,8 @@
 		 						                	<td>${ countList[vs.index] }</td>
 		 						                	<td>${ d.dDate }</td>
 								                	<td>
-									                	<button class="btn btn-secondary">삭제</button>
+<!-- 									                	<button name="deleteBtn" class="btn btn-secondary">삭제</button> -->
+									                	<input type="button" id="deleteBtn" name="deleteBtn" class="btn btn-secondary" value = "삭제">
 								                	</td>
 												</tr>
 											</c:forEach>
@@ -126,8 +127,9 @@
 	<script type="text/javascript">
 	/*------------------------------ 부서 삭제 ------------------------------*/
 	$('.btn-secondary').click(function(){
+// 	$("input[name='deleteBtn']").click(function(){
 		var dNo = $(this).parent().parent().children().eq(0).text();
-		console.log(dNo);
+// 		console.log(dNo);
 		var bool = confirm("정말 삭제하시겠습니까?");
 			
 		if(bool){
@@ -136,14 +138,15 @@
 				data : {dNo:dNo},
 				success : function(data){
 					console.log(data);
-					location.reload();
-				},
+					window.location.reload(true);
+					},
 				error : function(data){
 					console.log(data);
 				}
 			});
 		}
 	});
+	
 
 	/*------------------------------ 트리구조 페이지로 이동 ------------------------------*/
 	

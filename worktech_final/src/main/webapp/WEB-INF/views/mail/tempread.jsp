@@ -12,15 +12,6 @@
 <!-- Google Font: Source Sans Pro -->
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-<!-- Font Awesome -->
-<link rel="stylesheet"
-	href="${contextPath}/resources/plugins/fontawesome-free/css/all.min.css">
-<!-- Theme style -->
-<link rel="stylesheet"
-	href="${contextPath}/resources/dist/css/adminlte.min.css">
-<!-- summernote -->
-<link rel="stylesheet"
-	href="${contextPath}/resources/plugins/summernote/summernote-bs4.min.css">
 
 <style>
 
@@ -253,7 +244,8 @@ td {
 			<div class="section-body">
 				<h2 class="section-title">메일함</h2>
 				<p class="section-lead">메일 삭제, 중요메일 관리를 할 수 있습니다.</p>
-				</section>
+			</section>
+			
 						<div class="row">
 						<div class="col-md-3">
 						<div class="card">
@@ -389,21 +381,6 @@ td {
 		
 		<jsp:include page="../common/footer.jsp"></jsp:include>
 
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<!-- Bootstrap 4 -->
-	<script
-		src="${contextPath}/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="${contextPath}/resources/dist/js/adminlte.min.js"></script>
-	<!-- Summernote -->
-	<script
-		src="${contextPath}/resources/plugins/summernote/summernote-bs4.min.js"></script>
-	<script
-		src="${contextPath}/resources/plugins/summernote/lang/summernote-ko-KR.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="${contextPath}/resources/dist/js/demo.js"></script>
-	<!-- Page specific script -->
 	<script>
 		$(function() {
 			//Add text editor

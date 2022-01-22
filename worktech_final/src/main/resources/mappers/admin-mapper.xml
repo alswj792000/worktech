@@ -140,5 +140,8 @@
 		set d_status='N'
 		where d_No=#{dNo}
 	</update>
+
+
+	
 	
 </mapper>

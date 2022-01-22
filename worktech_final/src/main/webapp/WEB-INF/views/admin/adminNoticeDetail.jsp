@@ -51,6 +51,7 @@
         	margin-right: 10px;
         	margin-left: 5px;
         }
+        
     </style>
 </head>
 
@@ -97,7 +98,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>작성 내용</label>
-                                    <textarea class="summernote" >
+                                    <textarea class="summernote" id="textArea">
                                     	${ b.bContent }
                                     </textarea>
                                 </div>
@@ -177,6 +178,8 @@
 			}
 			
 		}
+		
+		$('.summernote').summernote('disable');
 	</script>
 </body>
 

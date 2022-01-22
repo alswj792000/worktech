@@ -95,7 +95,7 @@
 	                            <div class="card-body">
 	                                <div class="form-group">
 	                                    <label>글 제목</label>
-	                                    <input type="text" class="form-control" name="bTitle" value="">
+	                                    <input type="text" class="form-control" id="title" name="bTitle" value="">
 	                                </div>
 	                                <div class="form-group half-col left-item">
 	                                    <label>작성자</label>
@@ -129,7 +129,7 @@
 	                                </div>
 	                            </div>
 	                            <div class="card-footer text-right">
-	                                <button class="btn btn-primary mr-1" type="submit">저장</button>
+	                                <button class="btn btn-primary mr-1" type="submit" onclick="return insertNotice();">등록</button>
 	                                <button class="btn btn-danger" type="reset" onclick="location.href='noticeList.ad'">취소</button>
 	                            </div>
 	                        </div>
@@ -184,6 +184,24 @@
             if (files.length > 4) {
                 alert("파일은 최대 3개까지 업로드 가능합니다.");
             }
+        }
+        
+        function insertNotice(){
+        	var content = $('#summernote').val();
+        	var title = $('#title').val();
+        	
+        	if(title == ''){
+        		alert('글 제목을 입력하세요');
+        		$('#title').focus();
+        		return false;
+        	} else if (content == ''){
+        		alert('글 내용을 입력하세요');
+        		$('#summernote').focus();
+        		return false;
+        	} else {
+        		return true;
+        	}
+        	
         }
         
     </script>

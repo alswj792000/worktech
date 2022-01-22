@@ -119,8 +119,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>작성 내용</label>
-                                    <div class="inputData">
-                                    	<c:out value="${ b.bContent }" escapeXml="false" />
+                                    <div class="summernote">
+                                    	${ b.bContent }
                                     </div>
                                 </div>
                             <div class="form-group">

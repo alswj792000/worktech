@@ -16,7 +16,6 @@ import com.google.zxing.qrcode.QRCodeWriter;
 
 public class QrUtil {
 	
-	//	public static void makeQR(String url, String id, int width, int height, String file_path, String file_name) {
 	public static void makeQR(String url, int width, int height, String file_path, String file_name) {
 		
 		try {

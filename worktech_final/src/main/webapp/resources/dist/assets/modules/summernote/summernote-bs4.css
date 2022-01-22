@@ -340,7 +340,7 @@
 
 .note-editor.note-frame .note-editing-area .note-editable[contenteditable="false"]
 	{
-	background-color: #e5e5e5
+	background-color: #fff;
 }
 
 .note-editor.note-frame .note-editing-area .note-codable {

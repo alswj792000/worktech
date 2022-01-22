@@ -16,10 +16,7 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 <!-- Font Awesome -->
 <link rel="stylesheet"
-	href="${contextPath}/resources/plugins/fontawesome-free/css/all.min.css">
-<!-- Theme style -->
-<link rel="stylesheet"
-	href="${contextPath}/resources/dist/css/adminlte.min.css">
+	href="resources/plugins/fontawesome-free/css/all.min.css">
 
 <style>
 .mailSR-info {
@@ -145,20 +142,18 @@ td {
 			<!-- Content Header (Page header) -->
 			<section class="section">
 				<div class="section-header">
+					<div class="row mb-2">
 					<h1>메일읽기</h1>
 							<div class="section-header-breadcrumb"></div>
-					
+					</div>
 				</div>
-				<div class="section-header-breadcrumb"></div>
-				</div>
+
 			<div class="section-body">
 				<h2 class="section-title">메일함</h2>
 				<p class="section-lead">메일 삭제, 중요메일 관리를 할 수 있습니다.</p>
 				
 		</section>
-			<!-- Main content -->
-			<section class="content">
-				<div class="container-fluid">
+		
 					<div class="row">
 						<div class="col-md-3">
 						<div class="card">
@@ -238,14 +233,14 @@ td {
 														class="far fa-file-pdf"></i></span>
 														
 													<div class="mailbox-attachment-info">
-														<a href="${contextPath }/resources/mailUploadFiles/${mF.mChangeName}" 
+														<a href="resources/mailUploadFiles/${mF.mChangeName}" 
 														download="${mF.mOriginalName }"
 														class="mailbox-attachment-name"><i
 															class="fas fa-paperclip"></i> ${mF.mOriginalName }</a> <span
 															class="mailbox-attachment-size clearfix mt-1"> 
 <!-- 															<span>1,245KB</span>  -->
 															<a 
-																href="${contextPath }/resources/mailUploadFiles/${mF.mChangeName}" 
+																href="resources/mailUploadFiles/${mF.mChangeName}" 
 																download="${mF.mOriginalName }"
 															class="btn btn-default btn-sm float-right"><i
 																class="fas fa-cloud-download-alt"></i></a>
@@ -281,15 +276,5 @@ td {
 		<jsp:include page="../common/footer.jsp"></jsp:include>
 		
 
-
-
-	<!-- Bootstrap 4 -->
-	<script src="resources/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="resources/dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="resources/dist/js/demo.js"></script>
-
-	
 </body>
 </html>

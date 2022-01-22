@@ -5,33 +5,41 @@
 		insert into todo
 		values(SEQ_TODO.nextval, #{start},
 		#{description}, #{end}, #{mNo}, #{title},
-		#{type}, #{backgroundColor}, #{textColor}, #{share})
+		#{type}, #{backgroundColor}, #{textColor}, #{share}, 'Y')
 	</insert>
 
 	<select id="getAllList" resultMap="toDoResultSet">
 		select todo.tno,
 		todo.tstartdate, todo.tcontent, todo.tenddate, todo.mno,
 		todo.ttitle, todo.ttype, todo.bgcolor, todo.textcolor,
-		todo.t_share, member.name
+		todo.t_share, todo.t_status, member.name
 		from todo
 		join member on(todo.mno =
 		member.m_no)
-		where todo.mno = #{mNo}
+		where todo.mno = #{mNo} and todo.t_status = 'Y'
 		union
 		select todo.tno, todo.tstartdate, todo.tcontent, todo.tenddate,
 		todo.mno, todo.ttitle, todo.ttype, todo.bgcolor,
-		todo.textcolor, todo.t_share, member.name
+		todo.textcolor, todo.t_share, todo.t_status, member.name
 		from todo
 		join member
 		on(todo.mno = member.name)
 		where t_share='true'
 	</select>
 
-	<delete id="deleteToDo">
-		delete from todo
-		where mno = #{mNo}
-		and tNo = #{tNo}
-	</delete>
+	<!-- 삭제 -->
+<!-- 	<delete id="deleteToDo"> -->
+<!-- 		delete from todo -->
+<!-- 		where mno = #{mNo} -->
+<!-- 		and tNo = #{tNo} -->
+<!-- 	</delete> -->
+	
+	<update id="deleteToDo">
+		update todo
+		set t_status='N'
+		where tNo=#{tNo}
+	</update>
+	
 
 	<update id="updateToDo">
 <!-- 		<if test="title==null or title.equals('null') or title.equals('')"> -->
@@ -51,7 +59,8 @@
 			ttype = #{type},
 			bgcolor = #{backgroundColor},
 			TCONTENT = #{description},
-			t_share = #{share}
+			t_share = #{share},
+			t_status = 'Y'
 			where tno = #{tNo}
 			and mno = #{mNo}
 <!-- 		</if> -->
@@ -77,6 +86,7 @@
 		<result column="TEXTCOLOR" property="textColor" />
 		<result column="NAME" property="username" />
 		<result column="t_share" property="share" />
+		<result column="T_STATUS" property="tstatus" />
 	</resultMap>
 
 </mapper>

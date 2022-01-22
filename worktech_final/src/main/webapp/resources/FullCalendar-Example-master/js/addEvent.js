@@ -9,6 +9,7 @@ var editType = $('#edit-type');
 var editColor = $('#edit-color');
 var editDesc = $('#edit-desc');
 var editShare = $('#edit-share');
+var editStatus = $('#edit-status');
 
 var addBtnContainer = $('.modalBtnContainer-addEvent');
 var modifyBtnContainer = $('.modalBtnContainer-modifyEvent');
@@ -46,7 +47,8 @@ var newEvent = function(start, end, eventType) {
 					backgroundColor : editColor.val(),
 					textColor : '#ffffff',
 					allDay : false,
-					share : false
+					share : false,
+					tstatus : 'Y'
 					
 				};
 
@@ -90,8 +92,10 @@ var newEvent = function(start, end, eventType) {
 					, textColor : eventData.textColor
 					, type : eventData.type
 					, share : eventData.share
+					, tstatus : eventData.tstatus
 				}
-
+				
+				
 				// 새로운 일정 저장
 				$.ajax({
 					url : "insertTodo.to",
