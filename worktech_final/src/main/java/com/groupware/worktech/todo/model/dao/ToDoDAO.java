@@ -20,7 +20,7 @@ public class ToDoDAO {
 	}
 
 	public int deleteToDo(SqlSessionTemplate sqlSession, Map map) {
-		return sqlSession.delete("toDoMapper.deleteToDo", map);
+		return sqlSession.update("toDoMapper.deleteToDo", map);
 	}
 
 	public int updateToDo(SqlSessionTemplate sqlSession, ToDo toDo) {
