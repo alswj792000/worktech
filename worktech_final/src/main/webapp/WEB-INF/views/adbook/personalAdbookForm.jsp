@@ -68,13 +68,13 @@
 				<div class="form-group row">
 					<label for="phone" class="col-sm-3 col-form-label">전화번호 <span class="required">*</span></label>
 					<div class="col-sm-9">
-						<input type="tel" class="form-control" name="adPhone" placeholder="전화번호" onblur="checkDup()">
+						<input type="tel" class="form-control" name="adPhone" id="onlyNumber" placeholder="전화번호 (-를 제외하고 입력해주세요)" onblur="checkDup()">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="inputPassword3" class="col-sm-3 col-form-label">이메일 <span class="required">*</span></label>
 					<div class="col-sm-9">
-						<input type="email" class="form-control" name="adEmail" placeholder="이메일" onblur="checkDup()">
+						<input type="email" class="form-control" name="adEmail" placeholder="이메일" onblur="checkDup(); checkEmail();">
 					</div>
 				</div>
 				<div class="form-group row">
@@ -128,6 +128,7 @@
 	<script>
 		var noDup = false;
 		var filled = false;
+		var emailForm = false;
 		
 		// 전화번호/이메일 중복 여부 확인
 		function checkDup() {
@@ -165,7 +166,7 @@
 				alert('이름, 전화번호, 이메일을 입력하세요');
 			}
 			
-			if(noDup == true && filled == true){
+			if(noDup == true && filled == true && emailForm == true){
 				document.form.target = "pAdParent";
 				document.form.action = "pAdbookInsert.ab";
 				document.form.method = "POST";
@@ -177,6 +178,23 @@
 		
 		function closePopup() {
 			window.close();
+		}
+		
+		// 전화번호 입력창에 번호만 입력할 수 있음
+		$('#onlyNumber').keyup(function(event){
+			var inputVal = $(this).val();
+			$(this).val(inputVal.replace(/[^0-9]/gi,''));
+		});
+		
+		function checkEmail() {
+			var email = $('input[name=adEmail]').val();
+			
+			if(email.indexOf("@") == -1){
+				alert("이메일 주소에 '@'를 포함해주세요");
+				emailForm = false;
+			} else {
+				emailForm = true;
+			}
 		}
 	</script>
 </body>

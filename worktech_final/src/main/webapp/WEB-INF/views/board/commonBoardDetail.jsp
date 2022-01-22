@@ -70,6 +70,10 @@
         i[name='rDeleteBtn']:hover{
         	cursor: pointer;
         }
+        
+        .summernote{
+        	background-color: none;
+        }
     </style>
 </head>
 
@@ -244,6 +248,8 @@
 		// 댓글 목록 불러오기 ajax
 		function getReplyList() {
 			var bNo = ${b.bNo};
+			var loginUser = ${loginUser.mNo};
+			console.log(loginUser);
 			
 			$.ajax({
 				url: 'commonReplyList.bo',
@@ -268,12 +274,19 @@
 							$content = $('<td width="65%">').text(data[i].rContent);
 							$date = $('<td width="15%" style="text-align: center;">').text(data[i].rDate);
 							$deleteBtn = $('<td width="5%">').html('<i class="fas fa-times" name="rDeleteBtn"></i>');
+							$noDeleteBtn = $('<td width="5%">');
 							
 							$tr.append($rNo);
 							$tr.append($name);
 							$tr.append($content);
 							$tr.append($date);
-							$tr.append($deleteBtn);
+							
+							// 로그인 유저가 댓글 작성자이면 삭제 버튼 O
+							if(loginUser == data[i].rName){
+								$tr.append($deleteBtn);
+							} else {
+								$tr.append($noDeleteBtn);
+							}
 							
 							$rTable.append($tr);
 						}
@@ -319,6 +332,8 @@
 				}
 			});
 		});
+		
+		$('.summernote').summernote('disable');
 	</script>
 </body>
 </html>
