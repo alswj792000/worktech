@@ -577,7 +577,7 @@
 		 		
 
 			 		 
-			 		 if(gowork == "" && leaveWork == "" && c != d) {
+			 		 if(gowork == "" && leaveWork == "") {
 			 			nowTime.innerHTML = h+"시간"+"&nbsp;"+"&nbsp;"+m+"분";
 			 		 } else if(gowork != "" && leaveWork == "" && c == d) {
 			 			nowTime.innerHTML = gh+"시간"+"&nbsp;"+"&nbsp;"+gm+"분";
