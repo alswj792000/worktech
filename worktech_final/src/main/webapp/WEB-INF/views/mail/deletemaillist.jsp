@@ -89,12 +89,14 @@
 			display: none;
 			width: 0px;
 		}
+		.mailbox-controls{padding:5px}
+		.mailbox-controls.with-border{border-bottom:1px solid rgba(0,0,0,.125)}
+		.table-responsive{overflow:auto}.table-responsive>.table tr td,.table-responsive>
+		.mailbox-messages>.table{margin:0}
 	</style>
 </head>
-
 <body>
 	<jsp:include page="../common/headerUser.jsp"></jsp:include>
-
 	<!-- Content Wrapper. Contains page content -->
 	<div class="main-content">
 
@@ -219,7 +221,6 @@
 														<i class="fas fa-paperclip"></i>
 													</c:if>
 												</td>
-												<%-- 														${mi.mailSRList.get(0).sRStatus } --%>
 												<c:if test="${ mi.mailSRList.get(0).MNo != loginUser.mNo}">
 													<td class="mailbox-name"><a href=#>${mi.senderName }</a></td>
 													<td onclick="location.href='${mdetail}'"
@@ -398,14 +399,6 @@
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 
-	<!-- jQuery -->
-	<script src="${contextPath}/resources/plugins/jquery/jquery.min.js"></script>
-	<!-- Bootstrap 4 -->
-	<script src="${contextPath}/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="${contextPath}/resources/dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="${contextPath}/resources/dist/js/demo.js"></script>
 	<!-- Page specific script -->
 	<script>
 		$(function () {

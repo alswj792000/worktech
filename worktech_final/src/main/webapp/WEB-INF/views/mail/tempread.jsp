@@ -143,7 +143,7 @@
 			overflow-y: auto;
 			/* prevent horizontal scrollbar */
 			overflow-x: hidden;
-			-->border: 10px solid black;
+			border: 10px solid black;
 		}
 
 		.ui-autocomplete {
@@ -199,7 +199,6 @@
 			border: 2px solid #c5c5c5;
 			border-radius: 4px;
 			width: 433px;
-			 !important;
 		}
 
 		.ui-menu-item .ui-menu-item-wrapper.ui-state-active {
@@ -374,18 +373,6 @@
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 
-	<!-- jQuery -->
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<!-- Bootstrap 4 -->
-	<script src="${contextPath}/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="${contextPath}/resources/dist/js/adminlte.min.js"></script>
-	<!-- Summernote -->
-	<script src="${contextPath}/resources/plugins/summernote/summernote-bs4.min.js"></script>
-	<script src="${contextPath}/resources/plugins/summernote/lang/summernote-ko-KR.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="${contextPath}/resources/dist/js/demo.js"></script>
-	<!-- Page specific script -->
 	<script>
 		$(function () {
 			//Add text editor

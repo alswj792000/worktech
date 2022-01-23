@@ -16,10 +16,6 @@
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
 
-	<link rel="stylesheet" href="resources/dist/assets/modules/summernote/summernote-bs4.css">
-	<link rel="stylesheet" href="resources/dist/assets/modules/jquery-selectric/selectric.css">
-	<link rel="stylesheet" href="resources/dist/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
-
 	<script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 	<style>
 		.mailSR-info {
@@ -182,12 +178,10 @@
 											<i class="far fa-trash-alt"></i>
 										</button>
 									</div>
-									<!-- /.btn-group -->
 									<button type="button" onclick="location.href='alllist.mail'"
 										class="btn btn-default btn-sm">
 										<i class="fas fa-sync-alt"></i>
 									</button>
-									<!-- /.float-right -->
 								</div>
 								<div class="table-responsive mailbox-messages">
 									<form id="allManage" method="post">
@@ -428,13 +422,9 @@
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 
-	<script src="resources/dist/assets/modules/summernote/summernote-bs4.js"></script>
-	<script src="resources/dist/assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
-	<script src="resources/dist/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js"></script>
-	<script src="resources/dist/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
-
 	<!-- Page Specific JS File -->
-	<script src="${contextPath}/resources/dist/assets/js/page/features-post-create.js"></script>
+	<script
+		src="resources/dist/assets/js/page/features-post-create.js"></script>
 
 	<script>
 		$(function () {
@@ -591,7 +581,6 @@
 			}
 
 			var v = $("#sendlist-li:not(button)");
-			console.log(v);
 		}
 	</script>
 </body>

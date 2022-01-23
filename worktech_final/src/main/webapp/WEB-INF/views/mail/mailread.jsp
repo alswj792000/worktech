@@ -165,12 +165,10 @@
 			font-size: 12px
 		}
 	</style>
-
 </head>
 
 <body>
 	<jsp:include page="../common/headerUser.jsp"></jsp:include>
-
 	<div class="main-content">
 		<!-- Content Header (Page header) -->
 		<section class="section">
@@ -226,7 +224,21 @@
 										<c:if test="${mF.mFileNo != 0}">
 											<li><span class="mailbox-attachment-icon"><i
 														class="far fa-file-pdf"></i></span>
-
+													<div class="mailbox-attachment-info">
+														<a href="resources/mailUploadFiles/${mF.mChangeName}" 
+														download="${mF.mOriginalName }"
+														class="mailbox-attachment-name"><i
+															class="fas fa-paperclip"></i> ${mF.mOriginalName }</a> <span
+															class="mailbox-attachment-size clearfix mt-1"> 
+															<a href="resources/mailUploadFiles/${mF.mChangeName}" 
+																download="${mF.mOriginalName }"
+															class="btn btn-default btn-sm float-right"><i
+																class="fas fa-cloud-download-alt"></i></a>
+														</span>
+													</div></li>
+											</c:if>
+										</c:forEach>
+									</ul>
 												<div class="mailbox-attachment-info">
 													<a href="${contextPath }/resources/mailUploadFiles/${mF.mChangeName}" download="${mF.mOriginalName }" class="mailbox-attachment-name">
 														<i class="fas fa-paperclip"></i>
@@ -259,17 +271,6 @@
 	</div>
 
 	<jsp:include page="../common/footer.jsp"></jsp:include>
-
-
-
-
-	<!-- Bootstrap 4 -->
-	<script src="resources/dist/js/bootstrap.bundle.min.js"></script>
-	<!-- AdminLTE App -->
-	<script src="resources/dist/js/adminlte.min.js"></script>
-	<!-- AdminLTE for demo purposes -->
-	<script src="resources/dist/js/demo.js"></script>
-
 
 </body>
 

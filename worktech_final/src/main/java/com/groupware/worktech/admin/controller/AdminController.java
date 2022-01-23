@@ -597,12 +597,13 @@ public class AdminController {
 		ArrayList<Department> list = aService.selectDepList();
 		
 		// 부서 구성원 수	
-		ArrayList<Integer> countList = aService.depCountList();
+//		ArrayList<Integer> countList = aService.depCountList();
 			
 		if( result > 0 ) {
 			model.addAttribute("list", list);
-			model.addAttribute("countList", countList);
-			return "adminDepartment";
+//			model.addAttribute("countList", countList);
+//			return "adminDepartment";
+			return "redirect:/dList.ad";
 		} else {
 			throw new AdminException("부서 등록에 실패했습니다.");
 		}

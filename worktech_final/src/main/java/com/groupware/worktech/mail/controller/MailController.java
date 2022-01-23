@@ -393,6 +393,8 @@ public class MailController {
 
 		if (result > 0) {
 			switch (command) {
+			case "alllist":
+				return "redirect:alllist.mail";
 			case "templist":
 				return "redirect:templist.mail";
 			case "sendlist":
@@ -438,7 +440,7 @@ public class MailController {
 			mv.addObject("list", list).addObject("pi", pi).addObject("count", count);
 			mv.setViewName("deletemaillist");
 		} else {
-			throw new MailException("임시보관함 조회에 실패했습니다.");
+			throw new MailException("휴지통 조회에 실패했습니다.");
 		}
 
 		return mv;
@@ -498,6 +500,7 @@ public class MailController {
 		MultipartFile uploadFile = mtpRequest.getFile("uploadFile");
 		List<MailFile> mailFileList = new ArrayList<MailFile>();
 		int result1 = 0;
+		
 		Member e = (Member) mtpRequest.getSession().getAttribute("loginUser");
 		String mNo = e.getmNo();
 		if(mail.getMailNo() != 0) {
@@ -520,8 +523,8 @@ public class MailController {
 		}
 		if (!uploadFile.isEmpty()) { 
 			for (MultipartFile mf : fileList) {
-				String originFileName = mf.getOriginalFilename(); // 원본 파일 명
-				long fileSize = mf.getSize(); // 파일 사이즈
+				String originFileName = mf.getOriginalFilename(); 
+				long fileSize = mf.getSize(); 
 
 				String mChangeName = saveFile(mtpRequest, mf);
 

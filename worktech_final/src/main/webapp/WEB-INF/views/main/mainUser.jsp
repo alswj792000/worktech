@@ -530,34 +530,69 @@
     <script src="resources/dist/assets/vendors/js/vendor.bundle.base.js"></script>
     
         <script>
-	       function nowTime(){
-	    	   var today = new Date();
+	        function nowTime(){
+		 		var today = new Date();
 		 		var nowTime = document.getElementById('nowTime');
 		 		var gowork = '${ co.goWork }';
+		 		var leaveWork = '${ co.leaveWork }';
+		 		var c = '${ co.commutDate }';
+		 		var year = today.getFullYear();
+		 		var month = ('0' + (today.getMonth() + 1)).slice(-2);
+		 		var day = ('0' + today.getDate()).slice(-2);
+		 		var d = year+"-"+month+"-"+day;
 		 		var h = today.getHours(); // date의 시 추출
 		 		var m = today.getMinutes(); //date의 분 추출
 				var goworkh = gowork.substring(11, 13); //출근 시간의 시 추출
 				var goworkm = gowork.substring(14, 16); // 출근 시간의 분 추출
-		 		
+		 		var leaveh =  leaveWork.substring(11, 13); // 퇴근 시간의 시 추출
+		 		var leavem = leaveWork.substring(14, 16); // 퇴근 시간의 분 추출
 				
 				// 추출한 숫자 Number 타입으로 변환
 		 		h = Number(h); 
 		 		m = Number(m);
 		 		goworkh = Number(goworkh);
 		 		goworkm = Number(goworkm);
+		 		leaveh = Number(leaveh);
+		 		leavem = Number(leavem);
 		 		
-		 		gh = h-goworkh;
-		 		gm = m-goworkm;
+		 		h = dasi(h); 
+		 		m = dasi(m);
 
-		 		nowTime.innerHTML = gh+"시간"+"&nbsp;"+"&nbsp;"+gm+"분";
+		 		//일하는 시간
+		 		gh = h-goworkh; 
+		 		gm = m-goworkm;
+		 		gh = dasi(gh); 
+		 		gm = dasi(gm); 
+		 		
+		 		// 퇴근 시간-출근 시간
+		 		if (leavem > goworkm){
+		 			wh = leaveh-goworkh;
+		 			wm = leavem-goworkm;
+		 		} else if(leavem < goworkm){
+		 			wh = (leaveh-1)-goworkh;
+		 			wm = (leavem+60)-goworkm;
+		 		} 
+		 		wh = dasi(wh); 
+		 		wm = dasi(wm); 
+		 		
+
+			 		 
+			 		 if(gowork == "" && leaveWork == "" && c != d) {
+			 			nowTime.innerHTML = h+"시간"+"&nbsp;"+"&nbsp;"+m+"분";
+			 		 } else if(gowork != "" && leaveWork == "" && c == d) {
+			 			nowTime.innerHTML = gh+"시간"+"&nbsp;"+"&nbsp;"+gm+"분";
+			 		 } else if(gowork != "" && leaveWork != "" && c == d) {
+			 			nowTime.innerHTML = wh+"시간"+"&nbsp;"+"&nbsp;"+wm+"분";
+			 		 } 
+
 		 		
 		 		setTimeout('nowTime()', 1000); // 1초마다 페이지 로드
-       }
-	       
-	       window.onload = function(){
+		 	}
+		 	
+		 	window.onload = function(){
 		 		nowTime();
 		 	};
-       
+	       
        function dasi(i){
           if(i < 10) {
              i = "0" + i;
@@ -565,8 +600,6 @@
           return i;
           // 10보다 작으면 앞자리에 0 추가
        }
-       
-       
     </script>
     
      <script type="text/javascript">

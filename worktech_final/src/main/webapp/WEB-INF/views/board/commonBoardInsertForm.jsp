@@ -97,7 +97,7 @@
 
             <div class="section-body">
                 <h2 class="section-title">일반 게시판 등록</h2>
-                <form action="cinsert.bo" method="post" enctype="Multipart/form-data" onsubmit="return checkCategory()">
+                <form action="cinsert.bo" method="post" enctype="Multipart/form-data" onsubmit="return checkContents()">
 	                <div class="row">
 	                    <div class="col-12 col-md-12 col-lg-12">
 	                        <div class="card">
@@ -142,7 +142,8 @@
 	                                </div>
 	                            </div>
 	                            <div class="card-footer text-right">
-	                                <button class="btn btn-primary mr-1" type="submit">저장</button>
+<!-- 	                                <button class="btn btn-primary mr-1" type="submit">저장</button> -->
+	                                <button class="btn btn-primary mr-1">저장</button>
 	                                <c:url var="clist" value="commonList.bo"/>
 	                                <button class="btn btn-danger" type="reset" onclick="location.href='${ clist }'">취소</button>
 	                            </div>
@@ -205,11 +206,19 @@
             }
         }
         
-        function checkCategory() {
+        function checkContents() {
         	var category = $('select[name=categoryNo]').val();
+        	var title = $('input[name=bTitle]').val();
+        	var content = $('textarea[name=bContent]').val();
         	
         	if(category == null){
         		alert('카테고리를 선택하세요');
+        		return false;
+        	} else if(title == ''){
+        		alert('제목을 입력하세요');
+        		return false;
+        	} else if (content == ''){
+        		alert('내용을 입력하세요');
         		return false;
         	} else {
         		return true;

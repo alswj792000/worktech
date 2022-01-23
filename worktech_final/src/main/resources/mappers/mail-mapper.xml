@@ -53,13 +53,14 @@
 		values (SEQ_MAIL_TEMP.NEXTVAL, #{receiveEmp}, null, #{etitle}, 
 				#{econtent}, 'T', #{mNo}, sysdate)
 	</insert>
+	
 	<insert id="insertMailSRSender">
 		insert into mail_s_r
-		values (SEQ_MAIL_TEMP.CURRVAL, #{mNo}, 'S', null, null)	
+		values (SEQ_MAIL_TEMP.CURRVAL, #{mNo}, 'S', 'N', null)	
 	</insert>
 	<insert id="insertMailSRReceiver">
 		insert into mail_s_r
-		values (SEQ_MAIL_TEMP.CURRVAL, #{mId}, 'R', null, null)
+		values (SEQ_MAIL_TEMP.CURRVAL, #{mId}, 'R', 'N', null)
 	</insert>
 	
 	<select id="getDeleteListCount" resultType="_int">

@@ -255,7 +255,7 @@ public class ReservationController {
 		int result = rvService.insertOtherReservation(r);
 		
 		if(result > 0 && countUpdate > 0) {
-			return "redirect:orvList.rv";			
+			return "redirect:myOrvList.rv";			
 		} else { 
 			throw new RvException("기타 예약에 실패하였습니다.");
 		}
@@ -314,15 +314,16 @@ public class ReservationController {
 		throw new RvException("나의 예약 목록 신청 취소에 실패하였습니다.");
 		
 	} 
-	
-	@Scheduled(cron="0/10 * * * * *")
-	public void updateMyOtherReservation() {
-	
-		int result = rvService.updateMyOtherReservation();
-		
-		if(result > 0) {
-			System.out.println("들어왔나요?");
-		}
-	}
+
+	// 시간 되면 자동 반납ㅍ -> servlet에서 namespace task 추가
+//	@Scheduled(cron="0/10 * * * * *")
+//	public void updateMyOtherReservation() {
+//	
+//		int result = rvService.updateMyOtherReservation();
+//		 
+//		if(result > 0) {
+//			System.out.println("들어왔나요?");
+//		}
+//	}
 	
 }
