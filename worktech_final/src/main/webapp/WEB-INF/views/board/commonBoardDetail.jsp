@@ -319,6 +319,8 @@
 				}
 			});
 		});
+		
+		$('.summernote').summernote('disable');
 	</script>
 </body>
 </html>
