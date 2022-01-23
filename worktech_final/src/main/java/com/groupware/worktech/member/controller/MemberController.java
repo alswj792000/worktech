@@ -596,8 +596,8 @@ public class MemberController {
 					+ "<p>임시 비밀번호 : " + pw + "</p></div>";
 			
 			String host = "smtp.naver.com"; // 네이버에서 보내기(smtp.naver.com) | gmail에서 보내기 (smtp.gmail.com)
-			String sender = "alswj792000@naver.com"; // 실제 보내는 사람의 유효한 메일 [ ※ test시 각자의 naver/gmail 계정을 추가하세요 ]
-			String senderPwd= "mIng@611218*"; // 그 메일의 실제 비밀번호  [ ※ test시 각자의 naver/gmail 계정의 비밀번호를 추가하세요 ]
+			String sender = ""; // 실제 보내는 사람의 유효한 메일 [ ※ test시 각자의 naver/gmail 계정을 추가하세요 ]
+			String senderPwd= ""; // 그 메일의 실제 비밀번호  [ ※ test시 각자의 naver/gmail 계정의 비밀번호를 추가하세요 ]
 			
 			Properties prop = new Properties(); 
 			prop.setProperty("mail.smtp.host", host);
