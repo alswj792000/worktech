@@ -471,7 +471,7 @@ public class MemberController {
 		
 		Member loginUser = (Member)model.getAttribute("loginUser");
 		/*------------------------------ 주소 ------------------------------*/
-		m.setAddress(post + "/" + address1 + "/" + address2 + "/" + address3);
+		m.setAddress(post + " " + address1 + " " + address2 + " " + address3);
 		
 		/*------------------------------ 생년월일 ------------------------------*/
 		Date birthDay = new Date(new GregorianCalendar(year, month-1, date).getTimeInMillis());
