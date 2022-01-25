@@ -116,13 +116,31 @@
 				                    
 				                    <div class="form-group">
 				                      <label>주소</label>
+				                        <c:forTokens var="addr" items="${ loginUser.address }" delims="/" varStatus="status">
+											<c:if test="${ status.index eq 0 && addr >= '0' && addr <= '99999' }">
+												<c:set var="post" value="${ addr }"/>
+											</c:if>
+											<c:if test="${ status.index eq 0 && !(addr >= '0' && addr <= '99999') }">
+												<c:set var="address1" value="${ addr }"/>
+											</c:if>
+											<c:if test="${ status.index eq 1 }">
+												<c:set var="address1" value="${ addr }"/>
+											</c:if>
+											<c:if test="${ status.index eq 2 }">
+												<c:set var="address2" value="${ addr }"/>
+											</c:if>
+											<c:if test="${ status.index eq 3 }">
+												<c:set var="address3" value="${ addr }"/>
+											</c:if>
+										</c:forTokens>
 				                       <c:choose>									
 		   									<c:when test="${ loginUser.address == '///' }" >
 		   										<input type="text" class="form-control" id="address" name="address" readonly style="background : white;" >
 				                   
 		   									</c:when>
 		   									<c:otherwise>
-		   										 <input type="text" class="form-control" id="address" name="address" readonly style="background : white;" value="${ loginUser.address }">
+		   										 <input type="text" class="form-control" id="address" name="address" readonly style="background : white;" 
+		   										 value="${ post } ${ address1 } ${ address2 } ${ address3 }">
 		   									</c:otherwise>
 										</c:choose>
 				                   
