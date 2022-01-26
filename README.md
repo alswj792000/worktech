@@ -61,7 +61,7 @@
 Server : Apache Tomcat 9.0
 Database : Oracle 18c
 Development Tool : Eclipse 4.15.0, sqlDeveloper version 21.2.1
-Development Language :  JAVA , HTML5, CSS3, JavaScript, jQuery, SQL, EL/JSTL
+Development Language :  JAVA, HTML5, CSS3, JavaScript, jQuery, SQL, EL/JSTL
 Framework: Spring, Mybatis, Bootstrap
 Team Coop : Github, Sourcetree, ERDCloud, Figma
 Open API : FullCalendar, ztree, jstree, summernote
