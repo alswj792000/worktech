@@ -7,7 +7,6 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>관리자 예약 자산 관리</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="resources/dist/assets/modules/bootstrap/css/bootstrap.min.css">
@@ -19,9 +18,6 @@
     <!-- Template CSS -->
     <link rel="stylesheet" href="resources/dist/assets/css/style.css">
     <link rel="stylesheet" href="resources/dist/assets/css/components.css">
-    
-    <!-- jstree -->
-<!-- 	<link rel="stylesheet" href="resources/dist/themes/default/style.min.css" /> -->
     
     <!-- Start GA -->
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -120,9 +116,9 @@
                 </form>
                 <ul class="navbar-nav navbar-right">
                     <li>
-                        <a href="#" class="nav-link nav-link-lg message-toggle">
+                        <a href="alllist.mail" class="nav-link nav-link-lg">
                             <i class="far fa-envelope"></i>
-                        </a> <!-- href에 메일 url 삽입 -->
+                        </a> 
                     </li>
                     <li class="dropdown dropdown-list-toggle">
                         <a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg" id="alarmBtn">
@@ -258,26 +254,16 @@
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="myCal.cr" class="nav-link has-dropdown">
+                            <a href="#" class="nav-link has-dropdown">
                                 <i class="fas fa-calendar-alt"></i>
                                 <span>캘린더</span></a>
                                 <ul class="dropdown-menu">
                                     <li>
-<!--                                         <a class="nav-link" href="myCal.cr">개인 캘린더</a> -->
+                                        <a class="nav-link" href="myCal.cr">개인 캘린더</a>
                                        <a class="nav-link" onclick="openTodo();">TODO LIST</a>
                                     </li>
                                 </ul>
                         </li>
-<!--                         <li class="dropdown"> -->
-<!--                             <a href="myCal.cr" class="nav-link has-dropdown"> -->
-<!--                                 <i class="fas fa-calendar-alt"></i> -->
-<!--                                 <span>캘린더</span></a> -->
-<!--                                 <ul class="dropdown-menu"> -->
-<!--                                     <li> -->
-<!--                                         <a class="nav-link" href="myCal.cr">개인 캘린더</a> -->
-<!--                                     </li> -->
-<!--                                 </ul> -->
-<!--                         </li> -->
                         <li class="dropdown">
                             <a href="myPage.me" class="nav-link">
                                 <i class="fas fa-user-lock"></i>

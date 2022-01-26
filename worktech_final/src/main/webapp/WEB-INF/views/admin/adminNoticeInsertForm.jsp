@@ -81,7 +81,7 @@
             <div class="section-header">
                 <h1>공지사항 게시판</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item">게시판 관리</div>
+                    <div class="breadcrumb-item">게시판</div>
                     <div class="breadcrumb-item active"><a href="noticeList.ad">공지사항 게시판</a></div>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                     }
                 }
             })
-            if (files.length > 4) {
+            if (files.length >= 4) {
                 alert("파일은 최대 3개까지 업로드 가능합니다.");
             }
         }

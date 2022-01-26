@@ -111,7 +111,7 @@
             <div class="section-header">
                 <h1>공지사항 게시판</h1>
                 <div class="section-header-breadcrumb">
-                    <div class="breadcrumb-item">게시판 관리</div>
+                    <div class="breadcrumb-item">게시판</div>
                     <div class="breadcrumb-item">공지사항 게시판</div>
                 </div>
             </div>
