@@ -307,7 +307,7 @@ public class ReservationController {
 		if(result > 0) {
 			int countDelete = rvService.getCountDelete(rvp);
 			if(countDelete > 0) {
-				return "redirect:myOrvList.rv";			
+				return "redirect:orvList.rv";			
 			}
 		} 
 		
