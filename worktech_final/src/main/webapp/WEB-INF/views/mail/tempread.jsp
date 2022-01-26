@@ -18,7 +18,7 @@
 	<!-- Theme style -->
 	<link rel="stylesheet" href="${contextPath}/resources/dist/css/adminlte.min.css">
 	<!-- summernote -->
-	<link rel="stylesheet" href="${contextPath}/resources/plugins/summernote/summernote-bs4.min.css">
+	<link rel="stylesheet" href="resources/dist/assets/modules/summernote/summernote-bs4.css">
 
 	<style>
 		.thispage,
@@ -277,9 +277,10 @@
 		<div class="main-content">
 			<section class="section">
 				<div class="section-header">
-					<div class="row mb-2">
-						<h1>메일 임시저장읽기</h1>
-						<div class="section-header-breadcrumb"></div>
+					<h1>임시 보관 메일</h1>
+					<div class="section-header-breadcrumb">
+						<div class="breadcrumb-item">메일</div>
+		            	<div class="breadcrumb-item">임시 보관 메일</div>
 					</div>
 				</div>
 			</section>
@@ -288,14 +289,9 @@
 				<c:import url="mailSidebar.jsp" />
 				<div class="col-md-9">
 					<div class="card card-primary card-outline">
-						<div class="card-header">
-							<h3 class="card-title">새 메일 쓰기</h3>
-						</div>
-						<!-- /.card-header -->
 						<form method="post" id="form-mailsend" enctype="Multipart/form-data">
 							<div class="card-body">
 								<input type="hidden" value="${loginUser.mNo}" name="senderMailId" />
-								<%-- 											<input type="hidden" value="${loginUser.Name}" name=senderName /> --%>
 								<input type="hidden" value="${mail.mailNo}" name=mailNo />
 
 								<div class="mailsubtitle-flex-container">
@@ -318,7 +314,7 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<textarea id="compose-textarea" class="form-control mail-subtitle" name="econtent">${mail.econtent }
+									<textarea id="summernote" class="form-control mail-subtitle summernote" name="econtent">${mail.econtent }
 					                 	   </textarea>
 								</div>
 								<div class="form-group">
@@ -349,7 +345,6 @@
 									</c:forEach>
 								</table>
 							</div>
-							<!-- /.card-body -->
 							<div class="card-footer">
 								<div class="float-right">
 									<button type="submit" id="tmpInsert-btn" class="btn btn-default">
@@ -375,12 +370,6 @@
 
 	<script>
 		$(function () {
-			//Add text editor
-			$('#compose-textarea').summernote({
-				lang: "ko-KR",
-				height: 400,
-			});
-
 			$('.close').click(function () {
 				if (!window.confirm("정말 삭제하시겠습니까?")) {
 					return;
@@ -492,6 +481,8 @@
 			}
 		}
 	</script>
+	
+	<script src="resources/dist/assets/modules/summernote/summernote-bs4.js"></script>
 </body>
 
 </html>

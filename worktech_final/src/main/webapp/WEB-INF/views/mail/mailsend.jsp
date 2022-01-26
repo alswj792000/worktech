@@ -15,11 +15,7 @@
 		href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
 	<!-- Theme style -->
-	<link rel="stylesheet" href="${contextPath}/resources/dist/css/adminlte.min.css">
-	<link rel="stylesheet" href="${contextPath}/resources/dist/assets/modules/summernote/summernote-bs4.css">
-	<link rel="stylesheet" href="${contextPath}/resources/dist/assets/modules/jquery-selectric/selectric.css">
-	<link rel="stylesheet"
-		href="${contextPath}/resources/dist/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
+	<link rel="stylesheet" href="resources/dist/assets/modules/summernote/summernote-bs4.css">
 	<style>
 		.mailsubtitle-flex-container {
 			display: flex;
@@ -123,24 +119,16 @@
 			<div class="section-header">
 				<h1>메일 보내기</h1>
 				<div class="section-header-breadcrumb">
-					<div class="breadcrumb-item">새로운 메일 작성</div>
+					<div class="breadcrumb-item">메일</div>
+	            	<div class="breadcrumb-item">메일 보내기</div>
 				</div>
 			</div>
-
 			<div class="section-body">
-				<h2 class="section-title">새로운 메일작성</h2>
-				<p class="section-lead">새로운 메일을 작성하실 수 있습니다.</p>
-
 				<div class="row">
 					<!-- 사이드 바 -->
 					<c:import url="mailSidebar.jsp" />
-					<!-- /.col -->
 					<div class="col-md-9">
 						<div class="card card-primary card-outline">
-							<div class="card-header">
-								<h3 class="card-title">새 메일 쓰기</h3>
-							</div>
-							<!-- /.card-header -->
 							<form method="post" id="form-mailsend" enctype="Multipart/form-data">
 								<div class="card-body">
 									<input type="hidden" value="${loginUser.mNo}" name="senderMailId" />
@@ -163,7 +151,7 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<textarea id="compose-textarea" class="form-control mail-subtitle"
+										<textarea id="summernote" class="form-control mail-subtitle summernote"
 											name="econtent" placeholder="메일 내용을 입력해주세요"></textarea>
 									</div>
 									<div class="form-group">
@@ -201,15 +189,10 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<!-- Page Specific JS File -->
-	<script src="../../../resources/dist/assets/js/page/features-post-create.js"></script>
+	<script src="resources/dist/assets/js/page/features-post-create.js"></script>
 	<!-- Page specific script -->
 	<script>
 		$(function () {
-			// 썸머노트 렌더링
-			$('#compose-textarea').summernote({
-				lang: "ko-KR",
-				height: 550,
-			});
 
 			var empEmail;
 			// 자동완성
@@ -375,6 +358,7 @@
 			console.log(v);
 		}
 	</script>
+	<script src="resources/dist/assets/modules/summernote/summernote-bs4.js"></script>
 </body>
 
 </html>

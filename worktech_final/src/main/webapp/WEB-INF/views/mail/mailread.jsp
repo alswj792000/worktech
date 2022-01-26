@@ -164,6 +164,11 @@
 			color: #999;
 			font-size: 12px
 		}
+		
+		.searchArea{
+			width: 280px !important;
+			align-self: flex-end !important;
+		}
 	</style>
 </head>
 
@@ -173,103 +178,82 @@
 		<!-- Content Header (Page header) -->
 		<section class="section">
 			<div class="section-header">
-				<h1>메일읽기</h1>
-				<div class="section-header-breadcrumb"></div>
+				<h1>메일 읽기</h1>
+				<div class="section-header-breadcrumb">
+					<div class="breadcrumb-item">메일</div>
+	            	<div class="breadcrumb-item">메일 읽기</div>
+				</div>
 			</div>
-			<div class="section-header-breadcrumb"></div>
 		</section>
-	</div>
-	<div class="section-body">
-
-		<!-- Main content -->
-		<section class="content">
-			<div class="container-fluid">
-				<div class="row">
-					<!-- 사이드 바 -->
-					<c:import url="mailSidebar.jsp" />
-					<div class="col-md-9">
-						<div class="card card-primary card-outline">
-							<div class="card-header">
-								<h3 class="card-title">${mail.etitle }</h3>
-
-								<div class="card-tools">
-									<div></div>
+		<div class="section-body">
+			<div class="row">
+				<!-- 사이드 바 -->
+				<c:import url="mailSidebar.jsp" />
+				<div class="col-md-9">
+					<div class="card card-primary card-outline">
+						<div class="card-header">
+							<h3 class="card-title">${mail.etitle }</h3>
+	
+							<div class="card-tools">
+								<div></div>
+							</div>
+						</div>
+						<div class="card-body p-0">
+							<div class="mailbox-read-info">
+	
+								<h6>&nbsp;보낸 사람 : &lt;${mail.senderName }&gt;
+									${mail.mNo}@worktech.com</h6>
+								<h6>&nbsp;받는 사람 :
+									<c:if test="${mail.receiverName != null }">&lt;${mail.receiverName }&gt;</c:if>
+									${mail.receiveEmp} <span class="mailbox-read-time float-right">
+										<fmt:formatDate pattern="yyyy-MM-dd a HH:mm" value="${mail.sDate }" />
+									</span>
+								</h6>
+							</div>
+							<div class="mailbox-controls with-border text-center">
+								<div class="btn-group">
+									<input type="hidden">
 								</div>
 							</div>
-							<div class="card-body p-0">
-								<div class="mailbox-read-info">
-
-									<h6>보낸 사람 : &lt;${mail.senderName }&gt;
-										${mail.mNo}@worktech.com</h6>
-									<h6>
-										&nbsp;받는 사람 :
-										<c:if test="${mail.receiverName != null }">&lt;${mail.receiverName }&gt;</c:if>
-										${mail.receiveEmp} <span class="mailbox-read-time float-right">
-											<fmt:formatDate pattern="yyyy-MM-dd a HH:mm" value="${mail.sDate }" />
-										</span>
-									</h6>
-								</div>
-								<div class="mailbox-controls with-border text-center">
-									<div class="btn-group">
-										<input type="hidden">
-									</div>
-								</div>
-								<!-- 이메일 내용 -->
-								<div class="mailbox-read-message">${mail.econtent}</div>
-
-							</div>
-							<div class="card-footer bg-white">
-								<ul class="mailbox-attachments d-flex align-items-stretch clearfix">
-									<c:forEach var="mF" items="${mail.mailFileList }">
-										<c:if test="${mF.mFileNo != 0}">
-											<li><span class="mailbox-attachment-icon"><i
-														class="far fa-file-pdf"></i></span>
-													<div class="mailbox-attachment-info">
-														<a href="resources/mailUploadFiles/${mF.mChangeName}" 
-														download="${mF.mOriginalName }"
-														class="mailbox-attachment-name"><i
-															class="fas fa-paperclip"></i> ${mF.mOriginalName }</a> <span
-															class="mailbox-attachment-size clearfix mt-1"> 
-															<a href="resources/mailUploadFiles/${mF.mChangeName}" 
-																download="${mF.mOriginalName }"
-															class="btn btn-default btn-sm float-right"><i
-																class="fas fa-cloud-download-alt"></i></a>
-														</span>
-													</div></li>
-											</c:if>
-										</c:forEach>
-									</ul>
-												<div class="mailbox-attachment-info">
-													<a href="${contextPath }/resources/mailUploadFiles/${mF.mChangeName}" download="${mF.mOriginalName }" class="mailbox-attachment-name">
-														<i class="fas fa-paperclip"></i>
-														${mF.mOriginalName }
-													</a> 
-													<span class="mailbox-attachment-size clearfix mt-1">
-														<a href="${contextPath }/resources/mailUploadFiles/${mF.mChangeName}" download="${mF.mOriginalName }" class="btn btn-default btn-sm float-right">
-															<i class="fas fa-cloud-download-alt"></i>
-														</a>
-													</span>
+							<!-- 이메일 내용 -->
+							<div class="mailbox-read-message">${mail.econtent}</div>
+	
+						</div>
+						<div class="card-footer bg-white">
+							<ul class="mailbox-attachments d-flex align-items-stretch clearfix">
+								<c:forEach var="mF" items="${mail.mailFileList }">
+									<c:if test="${mF.mFileNo != 0}">
+										<li>
+											<span class="mailbox-attachment-icon">
+												<i class="far fa-file-pdf"></i>
+											</span>
+											<div class="mailbox-attachment-info">
+												<a href="resources/mailUploadFiles/${mF.mChangeName}" download="${mF.mOriginalName }" class="mailbox-attachment-name">
+													<i class="fas fa-paperclip"></i> ${mF.mOriginalName }
+												</a> 
+												<span class="mailbox-attachment-size clearfix mt-1"> 
+													<a href="resources/mailUploadFiles/${mF.mChangeName}" download="${mF.mOriginalName }" class="btn btn-default btn-sm float-right">
+														<i class="fas fa-cloud-download-alt"></i>
+													</a>
+												</span>
 												</div>
 											</li>
 										</c:if>
 									</c:forEach>
 								</ul>
-
+						</div>
+						<div class="card-footer">
+							<div class="float-right">
+								<input type="hidden">
 							</div>
-							<div class="card-footer">
-								<div class="float-right">
-									<input type="hidden">
-								</div>
-								<button onclick="location.href='javascript:history.back();'" type="reset"
-									class="btn btn-default">뒤로가기</button>
-							</div>
+							<button onclick="location.href='javascript:history.back();'" type="reset"
+								class="btn btn-default">뒤로가기</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	</div>
-
 	<jsp:include page="../common/footer.jsp"></jsp:include>
 
 </body>

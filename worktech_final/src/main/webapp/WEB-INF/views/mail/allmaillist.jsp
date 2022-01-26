@@ -130,6 +130,11 @@
 			float: right;
 			margin-right: -.625rem
 		}
+		
+		.searchArea{
+			width: 280px !important;
+			align-self: flex-end !important;
+		}
 	</style>
 </head>
 
@@ -141,10 +146,10 @@
 		<section class="section">
 			<div class="section-header">
 				<h1>전체 메일함</h1>
-				<div class="section-header-button">
-					<a href="send.mail" class="btn btn-primary">메일 보내기</a>
+				<div class="section-header-breadcrumb">
+					<div class="breadcrumb-item">메일</div>
+	            	<div class="breadcrumb-item">전체 메일함</div>
 				</div>
-				<div class="section-header-breadcrumb"></div>
 			</div>
 			<div class="section-body">
 				<div class="row">
@@ -152,8 +157,7 @@
 					<c:import url="mailSidebar.jsp" />
 					<div class="col-md-9">
 						<div class="card card-primary card-outline">
-							<div class="card-header">
-
+							<div class="card-header searchArea">
 								<div class="card-tools">
 									<div class="input-group input-group-sm">
 										<input type="text" class="form-control" id="searchValue" value="${searchValue}" placeholder="메일 검색">

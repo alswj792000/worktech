@@ -93,6 +93,11 @@
 		.mailbox-controls.with-border{border-bottom:1px solid rgba(0,0,0,.125)}
 		.table-responsive{overflow:auto}.table-responsive>.table tr td,.table-responsive>
 		.mailbox-messages>.table{margin:0}
+		
+		.searchArea{
+			width: 280px !important;
+			align-self: flex-end !important;
+		}
 	</style>
 </head>
 <body>
@@ -103,6 +108,10 @@
 		<section class="section">
 			<div class="section-header">
 				<h1>휴지통</h1>
+				<div class="section-header-breadcrumb">
+					<div class="breadcrumb-item">메일</div>
+	            	<div class="breadcrumb-item">휴지통</div>
+				</div>
 			</div>
 		</section>
 
@@ -113,11 +122,10 @@
 				<c:import url="mailSidebar.jsp" />
 				<div class="col-md-9">
 					<div class="card card-primary card-outline">
-						<div class="card-header">
+						<div class="card-header searchArea">
 							<div class="card-tools">
 								<div class="input-group input-group-sm">
-									<input type="text" class="form-control" id="searchValue" value="${searchValue }"
-										placeholder="메일 검색">
+									<input type="text" class="form-control" id="searchValue" value="${searchValue }" placeholder="메일 검색">
 									<div class="input-group-append">
 										<div onclick="searchMail();" class="btn btn-primary">
 											<i class="fas fa-search"></i>

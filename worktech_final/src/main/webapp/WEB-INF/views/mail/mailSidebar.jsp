@@ -10,19 +10,28 @@
 	.mail-icon {
 		width: 20px;
 	}
+	
+	.writeMail{
+		margin: 15px;
+		text-align: center;
+	}
+	.mailBtn {
+		width: 45%;
+	}
 </style>
 </head>
 <body>
 	<div class="col-md-3">
 		<div class="card">
-			<div class="card-header">
-				<a href="send.mail" class="btn btn-primary">메일 보내기</a>
+			<div class="writeMail">
+				<a href="send.mail" class="btn btn-primary mailBtn">메일 쓰기</a>
+				<a href="send.mail" class="btn btn-primary mailBtn">내게 쓰기</a>
 			</div>
 			<div class="card-body p-0">
 				<ul class="nav nav-pills flex-column">
 					<li class="nav-item">
 						<a href="alllist.mail" class="nav-link">
-							<i class="fas fa-envelope mail-icon"></i> 전체메일
+							<i class="fas fa-envelope mail-icon"></i> 전체 메일함
 							<c:if test="${count != 0 && count ne null}">
 								<span class="badge bg-primary float-right"> ${count} </span>
 							</c:if>
