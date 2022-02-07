@@ -36,6 +36,7 @@
 ### 시퀀스 다이어그램
 [채팅방 생성]
 ![채팅방 생성 시퀀스 다이어그램](https://user-images.githubusercontent.com/77559262/152892167-fd0e6209-733d-4f73-9167-a6c9d2042a0c.jpg)
+
 <br>
 
 ## 구현 기능
