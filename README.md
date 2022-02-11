@@ -70,6 +70,52 @@
 + 댓글 등록
 <br>
 
+## 결과물
+### [로그인]
+![로그인](https://user-images.githubusercontent.com/77559262/153546368-26fede25-7025-474d-8c55-2ea0eceb7e65.png)  
+
+### [메인 페이지]
+![메인 페이지](https://user-images.githubusercontent.com/77559262/153546438-9b68da4c-dd5a-403f-8ccc-642b2ca8ed4c.png)
+
+### [전자결재]
+![전자결재](https://user-images.githubusercontent.com/77559262/153550640-b4d3b47b-ddba-411e-b6c0-681211561d94.png)  
+
+### [메일]
+![메일](https://user-images.githubusercontent.com/77559262/153547222-df9039dc-038f-4492-bc07-6263d3102cc1.png)  
+
+### [사내 주소록]
+![사내 주소록](https://user-images.githubusercontent.com/77559262/153547311-fd364335-a37f-449d-bafa-8f0a26c4f2e8.png)  
+
+### [회의실 예약]
+![회의실 예약](https://user-images.githubusercontent.com/77559262/153547872-9618ceb6-b269-49a9-9321-d34057e2504f.png)  
+
+### [예약 자원 목록]
+![예약 자원 목록](https://user-images.githubusercontent.com/77559262/153547942-f3283d09-16ae-433f-8722-d2af0d9d00ff.png)  
+
+### [공지사항 게시판]
+![공지사항 게시판](https://user-images.githubusercontent.com/77559262/153548008-b38c2274-9bdf-4090-993b-0123228c507b.png)  
+
+### [마이 페이지]
+![마이 페이지](https://user-images.githubusercontent.com/77559262/153548203-c5ef97b3-61c8-4912-93ca-f07337163856.png)  
+
+### [채팅]  
+<p>
+    <img src="https://user-images.githubusercontent.com/77559262/153548871-36aaf4f3-ba33-42de-9a46-52a25a180c1c.png" width="30%"/> &nbsp;&nbsp;
+    <img src="https://user-images.githubusercontent.com/77559262/153548631-d17ce0cb-f523-4d4f-9840-7030c40eb481.png" width="30%"/> &nbsp;&nbsp;
+    <img src="https://user-images.githubusercontent.com/77559262/153548799-2623caad-6fe1-421f-bd5c-49369eb5b013.png" width="30%"/> 
+</p>                                                                                                                                     
+
+### [관리자 - 사원 관리]
+![사원 관리](https://user-images.githubusercontent.com/77559262/153550289-6a5cbfaa-69cb-49ad-800a-65dbcc5f1f25.png)  
+
+### [관리자 - 부서 관리]
+![부서 관리](https://user-images.githubusercontent.com/77559262/153550355-42f990f6-21d4-456c-ada5-491258a006eb.png)  
+
+### [관리자 - 예약 관리]
+![예약 관리](https://user-images.githubusercontent.com/77559262/153550468-da0700c1-cd8f-461b-a50b-16d780ff7bdc.png)  
+
+<br>
+
 ## 사용 기술 및 개발 환경
 ```
 Server : Apache Tomcat 9.0
